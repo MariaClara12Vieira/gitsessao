@@ -1,3 +1,14 @@
+<?php 
+session_start();
+
+if (!isset($_SESSION["usuario"])) {
+    header ("location: login.php");
+    exit;
+}
+
+echo "Bem-vindo, " . $_SESSION["usuario"] . "! Esta é a página de deshboard.";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,7 +17,7 @@
     <title>dashboard</title>
 </head>
 <body>
-    <h1>dashboard<h1>
+    <a href="logout.php">Sair</a>
     
 </body>
 </html>
